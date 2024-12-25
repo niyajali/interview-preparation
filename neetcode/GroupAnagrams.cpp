@@ -1,7 +1,3 @@
-//
-// Created by niyaj on 11/16/2024.
-//
-
 #include <algorithm>
 #include <iostream>
 #include <unordered_map>
