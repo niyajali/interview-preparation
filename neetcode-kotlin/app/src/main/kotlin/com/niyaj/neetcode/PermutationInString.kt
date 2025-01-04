@@ -98,7 +98,7 @@ object PermutationInString {
 
     fun checkInclusionSW(s1: String, s2: String): Boolean {
         // If the length of s1 is greater than the length of s2, return false
-        if (s1.length == s2.length) return true
+        if (s1.length > s2.length) return false
 
 
         val s1Count = IntArray(26) // Initialize an array of size 26
