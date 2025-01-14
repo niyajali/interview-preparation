@@ -8,7 +8,8 @@ plugins {
 }
 
 dependencies {
-
+    // Use the Kotlin standard library.
+    implementation(kotlin("stdlib"))
 }
 
 application {
