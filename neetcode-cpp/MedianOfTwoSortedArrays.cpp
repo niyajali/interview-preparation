@@ -20,7 +20,7 @@ public:
             int mid = (left + right) / 2;
             int index = half - mid;
 
-            int Aleft = mid > 0 ? A[index - 1] : INT_MIN;
+            int Aleft = mid > 0 ? A[mid - 1] : INT_MIN;
             int Aright = mid < A.size() ? A[mid] : INT_MAX;
 
             int Bleft = index > 0 ? B[index - 1] : INT_MIN;
