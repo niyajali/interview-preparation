@@ -5,20 +5,10 @@ import kotlin.math.min
 
 /**
  * Median of Two Sorted Arrays
- * You are given two integer arrays nums1 and nums2 of size m and n respectively, where each is sorted in ascending order. Return the median value among all elements of the two arrays.
+ * You are given two integer arrays nums1 and nums2 of size m and n respectively, where each is sorted in ascending order.
+ * Return the median value among all elements of the two arrays.
  *
  * Your solution must run in
- * O
- * (
- * l
- * o
- * g
- * (
- * m
- * +
- * n
- * )
- * )
  * O(log(m+n)) time.
  *
  * Example 1:
