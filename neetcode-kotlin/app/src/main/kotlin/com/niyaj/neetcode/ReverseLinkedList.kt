@@ -20,17 +20,17 @@ package com.niyaj.neetcode
  * 0 <= The length of the list <= 1000.
  * -1000 <= Node.val <= 1000
  */
-class ListNode constructor(var value: Int = -1, var next: ListNode? = null) {
+private class ReverseLinkedList constructor(var value: Int = -1, var next: ReverseLinkedList? = null) {
     override fun toString(): String {
         return "$value -> ${next.toString()}"
     }
 
     companion object {
         // a help function to generate a linked list with given values quickly, for test purpose only
-        fun quickList(nodes: List<Int>): ListNode {
-            val dummy = ListNode()
+        fun quickList(nodes: List<Int>): ReverseLinkedList {
+            val dummy = ReverseLinkedList()
             nodes.reversed().forEach({
-                val temp = ListNode(it)
+                val temp = ReverseLinkedList(it)
                 temp.next = dummy.next
                 dummy.next = temp
             })
@@ -40,6 +40,6 @@ class ListNode constructor(var value: Int = -1, var next: ListNode? = null) {
 }
 
 fun main() {
-    val listNode = ListNode.quickList(listOf(0, 1, 2, 3))
+    val listNode = ReverseLinkedList.quickList(listOf(0, 1, 2, 3))
     println(listNode)
 }

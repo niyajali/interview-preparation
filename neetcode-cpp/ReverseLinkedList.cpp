@@ -1,16 +1,11 @@
 #include <iostream>
+
+#include "ListNode.h"
+
 using namespace std;
 
 class ReverseLinkedList {
 public:
-    struct ListNode {
-        int val;
-        ListNode *next;
-        ListNode() : val(0), next(nullptr) {}
-        ListNode(int x) : val(x), next(nullptr) {}
-        ListNode(int x, ListNode *next) : val(x), next(next) {}
-    };
-
     static ListNode *reverseList(ListNode *head) {
         ListNode *prev = nullptr;
         ListNode *curr = head;
@@ -27,16 +22,17 @@ public:
 };
 
 int main() {
-    ReverseLinkedList::ListNode *head = new ReverseLinkedList::ListNode(1);
-    head->next = new ReverseLinkedList::ListNode(2);
-    head->next->next = new ReverseLinkedList::ListNode(3);
-    head->next->next->next = new ReverseLinkedList::ListNode(4);
-    head->next->next->next->next = new ReverseLinkedList::ListNode(5);
+    // Create a linked list: 1 -> 2 -> 3 -> 4 -> 5
+    auto* head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
 
-    ReverseLinkedList::ListNode *result = ReverseLinkedList::reverseList(head);
-    while (result) {
-        cout << result->val << " ";
-        result = result->next;
-    }
+    std::cout << "Original List: ";
+    ListNode::printList(head);
+
+    // Reverse the linked list
+    ListNode* reversedHead = ReverseLinkedList::reverseList(head);
+
+    std::cout << "Reversed List: ";
+    ListNode::printList(reversedHead);
+
     return 0;
 }
