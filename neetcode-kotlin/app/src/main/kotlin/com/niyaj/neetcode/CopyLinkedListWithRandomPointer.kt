@@ -38,6 +38,19 @@ package com.niyaj.neetcode
  * random is null or is pointing to some node in the linked list.
  */
 object CopyLinkedListWithRandomPointer {
+    /**
+     * Copy the linked list with random pointer.
+     * Step1: Create a hashmap to store the old node and the new node.
+     * Step2: Iterate through the linked list and create a new node for each node in the linked list.
+     * Step3: Iterate through the linked list and update the next and random pointers of the new nodes.
+     * Step4: Return the head of the new linked list.
+     *
+     * @param head The head of the linked list.
+     * @return The head of the copied linked list.
+     *
+     * Time Complexity: O(n)
+     * Space Complexity: O(n)
+     */
     fun copyRandomList(head: Node?): Node? {
         val oldCopy = hashMapOf<Node?, Node?>(null to null)
 
