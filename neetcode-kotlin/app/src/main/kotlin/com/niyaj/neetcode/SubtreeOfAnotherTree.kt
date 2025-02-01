@@ -26,6 +26,15 @@ package com.niyaj.neetcode
  * -100 <= root.val, subRoot.val <= 100
  */
 object SubtreeOfAnotherTree {
+    /**
+     * Check if the given subRoot is a subtree of the given root
+     * Step1: If the root or subRoot is null, return false
+     * Step2: If the given trees are same, return true
+     * Step3: Check for left and right subtrees
+     *
+     * @param root The root of the tree
+     * @param subRoot The root of the subtree
+     */
     fun isSubtree(root: TreeNode<Int?>?, subRoot: TreeNode<Int?>?): Boolean {
         if (root == null || subRoot == null) return false
         if (isSameTree(root, subRoot)) return true
@@ -33,6 +42,15 @@ object SubtreeOfAnotherTree {
         return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot)
     }
 
+    /**
+     * Check if the given trees are same
+     * Step1: If both trees are null, return true
+     * Step2: If both trees are not null and the values are same, check for left and right subtrees
+     * Step3: If any of the above conditions fail, return false
+     *
+     * @param p The root of the first tree
+     * @param q The root of the second tree
+     */
     private fun isSameTree(p: TreeNode<Int?>?, q: TreeNode<Int?>?): Boolean {
         if (p == null && q == null) return true
 
