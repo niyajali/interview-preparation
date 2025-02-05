@@ -8,11 +8,11 @@ public:
     static TreeNode *lowestCommonAncestor(TreeNode *root, TreeNode *p, TreeNode *q) {
         TreeNode *curr = root;
 
-        while (curr != nullptr) {
-            if (curr->val < p->val && curr->val < q->val) {
-                curr = curr->right;
-            } else if (curr->val > p->val && curr->val > q->val) {
+        while (curr) {
+            if (p->val < curr->val && q->val < curr->val) {
                 curr = curr->left;
+            } else if (p->val > curr->val && q->val > curr->val) {
+                curr = curr->right;
             } else {
                 return curr;
             }
@@ -32,10 +32,12 @@ int main() {
     root->right->left = new TreeNode(6);
     root->right->right = new TreeNode(7);
 
-    const TreeNode *result = LowestCommonAncestor().lowestCommonAncestor(root, root->left, root->right);
+    TreeNode::printTree(root);
+
+    const TreeNode *result = LowestCommonAncestor::lowestCommonAncestor(root, root->left, root->right);
     cout << result->val << endl;
 
-    const TreeNode *result2 = LowestCommonAncestor().lowestCommonAncestor(root, root->right->left, root->right->right);
+    const TreeNode *result2 = LowestCommonAncestor::lowestCommonAncestor(root, root->right->left, root->right->right);
     cout << result2->val << endl;
 
     return 0;
