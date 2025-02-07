@@ -21,7 +21,7 @@ public:
 
     bool isValidBSTBFS(TreeNode *root) {
         if (!root)
-            return false;
+            return true;
 
         queue<tuple<TreeNode *, int, int>> q;
         q.emplace(root, INT_MIN, INT_MAX);
